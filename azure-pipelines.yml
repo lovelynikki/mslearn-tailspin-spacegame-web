@@ -9,13 +9,14 @@ pool:
 variables:
   buildConfiguration: 'Release'
   wwwrootDir: 'Tailspin.SpaceGame.Web/wwwroot'
-  dotnetSdkVersion: '2.1.x'
+  dotnetSdkVersion: '5.0.x'
 
 steps:
 - task: UseDotNet@2
   displayName: 'Use .NET Core SDK $(dotnetSdkVersion)'
   inputs:
     version: '$(dotnetSdkVersion)'
+    performMultiLevelLookup: true
     includePreviewVersions: true
 
 - task: Npm@1
